@@ -42,7 +42,14 @@ class Body extends StatelessWidget {
                         ),
                         child: DefaultButton(
                           text: "Add To Cart",
-                          press: () {},
+                          press: () async {
+                            try {
+                              print(product.id);
+                            } on Exception catch (e) {
+                              print(e);
+                              // TODO
+                            }
+                          },
                         ),
                       ),
                     ),
