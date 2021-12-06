@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/add_product/add_product.dart';
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
@@ -31,6 +32,14 @@ class Body extends StatelessWidget {
             text: "Help Center",
             icon: "assets/icons/Question mark.svg",
             press: () {},
+          ),
+          ProfileMenu(
+            text: "Add Product",
+            icon: "assets/icons/Game Icon.svg",
+            press: () => {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => AddProduct()))
+            },
           ),
           ProfileMenu(
             text: "Log Out",
