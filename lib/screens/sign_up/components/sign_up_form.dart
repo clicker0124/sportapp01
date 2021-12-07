@@ -52,13 +52,13 @@ class _SignUpFormState extends State<SignUpForm> {
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           DefaultButton(
-            text: "Continue",
+            text: "Үргэлжлүүлэх",
             press: () async {
               print(email);
               print(password);
               final _newuser = await _auth.createUserWithEmailAndPassword(
                   email: email!, password: password!);
-              if(_newuser!=null){
+              if (_newuser != null) {
                 Navigator.pushNamed(context, SignInScreen.routeName);
               }
               // if (_formKey.currentState!.validate()) {
@@ -96,8 +96,8 @@ class _SignUpFormState extends State<SignUpForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Confirm Password",
-        hintText: "Re-enter your password",
+        labelText: "Нууц үг баталгаажуулах",
+        hintText: "Дахин нууц үгээ оруулах",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -129,8 +129,8 @@ class _SignUpFormState extends State<SignUpForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: "Нууц үг",
+        hintText: "Нууц үгээ оруулна уу",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -164,8 +164,8 @@ class _SignUpFormState extends State<SignUpForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
+        labelText: "И-Мэйл",
+        hintText: "И-Мэйл хаягаа оруулна уу",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

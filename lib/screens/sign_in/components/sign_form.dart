@@ -59,13 +59,13 @@ class _SignFormState extends State<SignForm> {
                   });
                 },
               ),
-              Text("Remember me"),
+              Text("Намайг сана"),
               Spacer(),
               GestureDetector(
                 onTap: () => Navigator.pushNamed(
                     context, ForgotPasswordScreen.routeName),
                 child: Text(
-                  "Forgot Password",
+                  "Нууц үгээ мартсан",
                   style: TextStyle(decoration: TextDecoration.underline),
                 ),
               )
@@ -74,12 +74,12 @@ class _SignFormState extends State<SignForm> {
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
-              text: "Continue",
+              text: 'Үргэлжлүүлэх',
               press: () async {
                 try {
                   final _loginUser = await _auth.signInWithEmailAndPassword(
                       email: _email, password: _password);
-                  // if all are valid then go to success screen
+
                   print("======================$_loginUser");
 
                   if (_loginUser != null) {
@@ -122,8 +122,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: "Нууц үг",
+        hintText: "Нууц үгээ оруулна уу",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -156,10 +156,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        labelText: "И-Мэйл",
+        hintText: "И-Мэйл хаягаа оруулна уу",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
       ),
