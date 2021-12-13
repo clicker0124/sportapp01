@@ -35,6 +35,10 @@ dependencies:
   flutter_svg: ^0.22.0 # help us to use SVG in our app
   provider: ^6.0.0 # for State management
   image_picker: ^0.8.4+4
+  firebase_storage: ^10.2.3
+  uuid: ^3.0.5
+  fluttertoast: ^8.0.8
+  flutter_typeahead: ^3.2.4
 
 dev_dependencies:
   flutter_test:
