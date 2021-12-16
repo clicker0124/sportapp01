@@ -173,7 +173,7 @@ class _AddProductState extends State<AddProduct> {
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'You must enter the product name';
+                            return 'Baraanii zaaval bichnuu';
                           }
                         },
                       ),
@@ -189,7 +189,7 @@ class _AddProductState extends State<AddProduct> {
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'You must enter the product name';
+                            return 'Une zaaval bichnuu';
                           }
                         },
                       ),
@@ -395,13 +395,10 @@ class _AddProductState extends State<AddProduct> {
               "name": productNameController.text,
               "price": double.parse(priceController.text),
               "sizes": selectedSizes,
-              // "colors": colors,
               "picture": imageUrl1,
               "quantity": int.parse(quatityController.text),
               "brand": _currentBrand,
               "category": _currentCategory,
-              // 'sale':onSale,
-              // 'featured':featured
             });
             _formKey.currentState!.reset();
             setState(() => isLoading = false);
@@ -413,7 +410,7 @@ class _AddProductState extends State<AddProduct> {
       } else {
         setState(() => isLoading = false);
 
-//        Fluttertoast.showToast(msg: 'all the images must be provided');
+//        Fluttertoast.showToast(msg: 'Baraa amjilttai nemebdlee');
       }
     }
   }
