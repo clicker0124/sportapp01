@@ -3,7 +3,6 @@ import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/size_config.dart';
 
-import 'color_dots.dart';
 import 'product_description.dart';
 import 'top_rounded_container.dart';
 import 'product_images.dart';
@@ -42,7 +41,6 @@ class Body extends StatelessWidget {
                         print(product.id);
                       } on Exception catch (e) {
                         print(e);
-                        // TODO
                       }
                     },
                   ),

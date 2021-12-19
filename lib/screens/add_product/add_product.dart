@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shop_app/db/product.dart';
 import '../../db/catergory.dart';
@@ -36,6 +37,7 @@ class _AddProductState extends State<AddProduct> {
   File? _image1;
 
   bool isLoading = false;
+  bool featured = false;
 
   @override
   void initState() {
@@ -161,6 +163,21 @@ class _AddProductState extends State<AddProduct> {
                           onChanged: changeSelectedBrand,
                           value: _currentBrand,
                         ),
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text('Featured'),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Switch(
+                            value: featured,
+                            onChanged: (value) {
+                              setState(() {
+                                featured = value;
+                              });
+                            }),
                       ],
                     ),
                     Padding(
@@ -399,6 +416,7 @@ class _AddProductState extends State<AddProduct> {
               "quantity": int.parse(quatityController.text),
               "brand": _currentBrand,
               "category": _currentCategory,
+              'featured': featured,
             });
             _formKey.currentState!.reset();
             setState(() => isLoading = false);
@@ -410,7 +428,7 @@ class _AddProductState extends State<AddProduct> {
       } else {
         setState(() => isLoading = false);
 
-//        Fluttertoast.showToast(msg: 'Baraa amjilttai nemebdlee');
+        Fluttertoast.showToast(msg: 'Baraa amjilttai nemebdlee');
       }
     }
   }
