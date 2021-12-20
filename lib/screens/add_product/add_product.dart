@@ -19,6 +19,7 @@ class _AddProductState extends State<AddProduct> {
   ProductService productService = ProductService();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController productNameController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
   TextEditingController quatityController = TextEditingController();
   final priceController = TextEditingController();
   List<DocumentSnapshot> brands = <DocumentSnapshot>[];
@@ -129,6 +130,20 @@ class _AddProductState extends State<AddProduct> {
                           if (value!.isEmpty) {
                             return 'Product ner ee oruul.';
                           } else if (value.length > 10) {
+                            return 'Product iin ner heterhii urt baina.';
+                          }
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        controller: descriptionController,
+                        decoration: InputDecoration(hintText: 'Description'),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Product ner ee oruul.';
+                          } else if (value.length > 300) {
                             return 'Product iin ner heterhii urt baina.';
                           }
                         },
@@ -410,6 +425,7 @@ class _AddProductState extends State<AddProduct> {
 
             productService.uploadProduct({
               "name": productNameController.text,
+              "description": descriptionController.text,
               "price": double.parse(priceController.text),
               "sizes": selectedSizes,
               "picture": imageUrl1,

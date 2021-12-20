@@ -39,7 +39,7 @@ class _DashboardScreenState extends State<PopularProduct> {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "All Products", press: () {}),
+          child: SectionTitle(title: "Бүтээгдэхүүн", press: () {}),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(

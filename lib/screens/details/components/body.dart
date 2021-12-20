@@ -29,13 +29,12 @@ class Body extends StatelessWidget {
                 color: Colors.white,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    left: SizeConfig.screenWidth * 0.15,
-                    right: SizeConfig.screenWidth * 0.15,
+                    left: SizeConfig.screenWidth * 0.1,
+                    right: SizeConfig.screenWidth * 0.1,
                     bottom: getProportionateScreenWidth(40),
-                    top: getProportionateScreenWidth(15),
                   ),
                   child: DefaultButton(
-                    text: "Add To Cart",
+                    text: "Сагсанд нэмэх",
                     press: () async {
                       try {
                         print(product.id);

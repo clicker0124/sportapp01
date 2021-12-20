@@ -30,14 +30,34 @@ class ProductDescription extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.only(
+            top: getProportionateScreenHeight(10),
             left: getProportionateScreenWidth(20),
             right: getProportionateScreenWidth(64),
           ),
-          // child: Text(
-          //   product.description,
-          //   maxLines: 3,
-          // ),
+          child: Text(
+            //description nemne
+            product.description,
+            maxLines: 3,
+          ),
         ),
+        Padding(
+          padding: EdgeInsets.only(
+              left: getProportionateScreenHeight(22),
+              top: getProportionateScreenHeight(20)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "\$${product.price}",
+                style: TextStyle(
+                  fontSize: getProportionateScreenWidth(18),
+                  fontWeight: FontWeight.w600,
+                  color: kPrimaryColor,
+                ),
+              ),
+            ],
+          ),
+        )
       ],
     );
   }

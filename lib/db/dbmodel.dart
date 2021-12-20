@@ -22,14 +22,16 @@ class DatabaseManager {
       await prods.get().then((querySnapshot) {
         querySnapshot.docs.forEach((element) {
           Product pr = new Product(
-              quantity: element['quantity'],
-              // sizes: element['sizes'],
-              brand: element['brand'],
-              category: element['category'],
-              id: element['id'],
-              name: element['name'],
-              picture: element['picture'],
-              price: element['price']);
+            quantity: element['quantity'],
+            // sizes: element['sizes'],
+            brand: element['brand'],
+            category: element['category'],
+            id: element['id'],
+            name: element['name'],
+            picture: element['picture'],
+            price: element['price'],
+            description: element['description'],
+          );
 
           productsList.add(pr);
           // productsList.add(element.data());
