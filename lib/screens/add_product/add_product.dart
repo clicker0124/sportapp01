@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:shop_app/db/product.dart';
 import '../../db/catergory.dart';
 import '../../db/brand.dart';
+import 'package:shop_app/constants.dart';
 
 class AddProduct extends StatefulWidget {
   @override
@@ -158,7 +159,7 @@ class _AddProductState extends State<AddProduct> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             'Category: ',
-                            style: TextStyle(color: grey),
+                            style: TextStyle(color: kPrimaryColor),
                           ),
                         ),
                         DropdownButton(
@@ -170,7 +171,7 @@ class _AddProductState extends State<AddProduct> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             'Brand: ',
-                            style: TextStyle(color: grey),
+                            style: TextStyle(color: kPrimaryColor),
                           ),
                         ),
                         DropdownButton(
@@ -316,7 +317,7 @@ class _AddProductState extends State<AddProduct> {
                       ],
                     ),
                     FlatButton(
-                      color: grey,
+                      color: kPrimaryColor,
                       textColor: white,
                       child: Text('Бараа нэмэх'),
                       onPressed: () {
@@ -381,7 +382,7 @@ class _AddProductState extends State<AddProduct> {
         padding: const EdgeInsets.fromLTRB(14, 20, 14, 20),
         child: new Icon(
           Icons.add,
-          color: grey,
+          color: kPrimaryColor,
         ),
       );
     } else {

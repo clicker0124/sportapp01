@@ -34,29 +34,21 @@ class _DashboardScreenState extends State<PopularProduct> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "Бүтээгдэхүүн", press: () {}),
-        ),
-        SizedBox(height: getProportionateScreenWidth(20)),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              ...List.generate(
-                ProductList.length,
-                (index) {
-                  return ProductCard(product: ProductList[index]);
-                },
-              ),
-              SizedBox(width: getProportionateScreenWidth(20)),
-            ],
+    return Container(
+      height: 500,
+      child: GridView.count(
+        crossAxisCount: 2,
+        shrinkWrap: true,
+        padding: EdgeInsets.only(bottom: 20),
+        children: [
+          ...List.generate(
+            ProductList.length,
+            (index) {
+              return ProductCard(product: ProductList[index]);
+            },
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }

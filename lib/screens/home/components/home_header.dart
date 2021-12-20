@@ -14,7 +14,7 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(15)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -23,11 +23,6 @@ class HomeHeader extends StatelessWidget {
             svgSrc: "assets/icons/Cart Icon.svg",
             press: () => Navigator.pushNamed(context, CartScreen.routeName),
           ),
-          // IconBtnWithCounter(
-          //   svgSrc: "assets/icons/Bell.svg",
-          //   numOfitem: 3,
-          //   press: () {},
-          // ),
         ],
       ),
     );
