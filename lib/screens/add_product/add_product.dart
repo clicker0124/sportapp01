@@ -89,7 +89,7 @@ class _AddProductState extends State<AddProduct> {
           color: black,
         ),
         title: Text(
-          "add product",
+          "Шинэ бараа нэмэх",
           style: TextStyle(color: black),
         ),
       ),
@@ -119,13 +119,13 @@ class _AddProductState extends State<AddProduct> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text('Product name'),
+                      child: Text('Бараа нэр'),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextFormField(
                         controller: productNameController,
-                        decoration: InputDecoration(hintText: 'Product name'),
+                        decoration: InputDecoration(hintText: 'Барааны нэр'),
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Product ner ee oruul.';
@@ -139,12 +139,12 @@ class _AddProductState extends State<AddProduct> {
                       padding: const EdgeInsets.all(8.0),
                       child: TextFormField(
                         controller: descriptionController,
-                        decoration: InputDecoration(hintText: 'Description'),
+                        decoration: InputDecoration(hintText: 'Тайлбар'),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Product ner ee oruul.';
+                            return 'Тайлбар оруулна уу..';
                           } else if (value.length > 300) {
-                            return 'Product iin ner heterhii urt baina.';
+                            return 'Тайлбарын хэмжээ урт байна.';
                           }
                         },
                       ),
@@ -182,7 +182,7 @@ class _AddProductState extends State<AddProduct> {
                     ),
                     Row(
                       children: <Widget>[
-                        Text('Featured'),
+                        Text('Бүх бараанд нэмэх.'),
                         SizedBox(
                           width: 10,
                         ),
@@ -201,11 +201,11 @@ class _AddProductState extends State<AddProduct> {
                         controller: quatityController,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          hintText: 'Quantity',
+                          hintText: 'Тоо хэмжээ',
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Baraanii zaaval bichnuu';
+                            return 'Тоо хэмжээ оруулан уу.';
                           }
                         },
                       ),
@@ -217,17 +217,17 @@ class _AddProductState extends State<AddProduct> {
                         controller: priceController,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          hintText: 'Price',
+                          hintText: 'Үнэ',
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Une zaaval bichnuu';
+                            return 'Үнэ заавал оруулан уу.';
                           }
                         },
                       ),
                     ),
 
-                    Text('Available Sizes'),
+                    Text('Размер'),
 
                     Row(
                       children: <Widget>[
@@ -318,7 +318,7 @@ class _AddProductState extends State<AddProduct> {
                     FlatButton(
                       color: grey,
                       textColor: white,
-                      child: Text('add product'),
+                      child: Text('Бараа нэмэх'),
                       onPressed: () {
                         validateAndUpload();
                       },

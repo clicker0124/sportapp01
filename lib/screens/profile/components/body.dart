@@ -4,8 +4,7 @@ import 'package:shop_app/screens/add_product/add_product.dart';
 import '../../../db/brand.dart';
 import '../../../db/catergory.dart';
 
-import 'profile_menu.dart';
-import 'profile_pic.dart';
+import 'package:shop_app/screens/profile/components/profile_menu.dart';
 
 TextEditingController categoryController = TextEditingController();
 TextEditingController brandController = TextEditingController();
@@ -21,50 +20,41 @@ class Body extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 20),
       child: Column(
         children: [
-          ProfilePic(),
+          // ProfilePic(),
           SizedBox(height: 20),
           ProfileMenu(
-            text: "My Account",
+            text: "Профайл",
             icon: "assets/icons/User Icon.svg",
             press: () => {},
           ),
           ProfileMenu(
-            text: "Notifications",
-            icon: "assets/icons/Bell.svg",
+            text: "Захиалга",
+            icon: "assets/icons/Cash.svg",
             press: () {},
           ),
           ProfileMenu(
-            text: "Settings",
+            text: "Хийсэн гүйлгээний түүх",
             icon: "assets/icons/Settings.svg",
             press: () {},
           ),
+
           ProfileMenu(
-            text: "Help Center",
-            icon: "assets/icons/Question mark.svg",
-            press: () {},
-          ),
-          ProfileMenu(
-            text: "Add Category",
-            icon: "assets/icons/Game Icon.svg",
+            text: "Категор нэмэх",
+            icon: "assets/icons/Settings.svg",
             press: () => {_catergoryAlert(context)},
           ),
           ProfileMenu(
-            text: "Add Brand",
-            icon: "assets/icons/Game Icon.svg",
+            text: "Бранд нэмэх",
+            icon: "assets/icons/Settings.svg",
             press: () => {_brandAlert(context)},
           ),
           ProfileMenu(
-            text: "Add Product",
-            icon: "assets/icons/Game Icon.svg",
+            text: "Бараа нэмэх",
+            icon: "assets/icons/Settings.svg",
             press: () => {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => AddProduct()))
             },
-          ),
-          ProfileMenu(
-            text: "Log Out",
-            icon: "assets/icons/Log out.svg",
-            press: () {},
           ),
         ],
       ),
