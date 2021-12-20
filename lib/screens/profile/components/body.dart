@@ -69,10 +69,10 @@ class Body extends StatelessWidget {
           controller: categoryController,
           validator: (value) {
             if (value!.isEmpty) {
-              return 'category cannot be empty';
+              return 'Хоосон байж болохгүй.';
             }
           },
-          decoration: InputDecoration(hintText: "add category"),
+          decoration: InputDecoration(hintText: "Категор нэмэх"),
         ),
       ),
       actions: <Widget>[
@@ -81,15 +81,15 @@ class Body extends StatelessWidget {
               if (categoryController.text != null) {
                 _categoryService.createCategory(categoryController.text);
               }
-              Fluttertoast.showToast(msg: 'category created');
+              Fluttertoast.showToast(msg: 'Категор нэмэгдлээ.');
               Navigator.pop(cc);
             },
-            child: Text('ADD')),
+            child: Text('Нэмэх')),
         FlatButton(
             onPressed: () {
               Navigator.pop(cc);
             },
-            child: Text('CANCEL')),
+            child: Text('Болих')),
       ],
     );
     showDialog(context: cc, builder: (_) => alert);
@@ -104,10 +104,10 @@ void _brandAlert(cc) {
         controller: brandController,
         validator: (value) {
           if (value!.isEmpty) {
-            return 'category cannot be empty';
+            return 'Хоосон байж болохгүй.';
           }
         },
-        decoration: InputDecoration(hintText: "add brand"),
+        decoration: InputDecoration(hintText: "Бранд нэмэх"),
       ),
     ),
     actions: <Widget>[
@@ -116,15 +116,15 @@ void _brandAlert(cc) {
             if (brandController.text != null) {
               _brandService.createBrand(brandController.text);
             }
-            Fluttertoast.showToast(msg: 'brand created');
+            Fluttertoast.showToast(msg: 'Бранд нэмэгдлээ.');
             Navigator.pop(cc);
           },
-          child: Text('ADD')),
+          child: Text('Нэмэх')),
       FlatButton(
           onPressed: () {
             Navigator.pop(cc);
           },
-          child: Text('CANCEL')),
+          child: Text('Болих')),
     ],
   );
   showDialog(context: cc, builder: (_) => alert);
