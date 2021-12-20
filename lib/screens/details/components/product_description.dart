@@ -37,16 +37,57 @@ class ProductDescription extends StatelessWidget {
           child: Text(
             //description nemne
             product.description,
-            maxLines: 3,
+            maxLines: 10,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            top: getProportionateScreenHeight(10),
+            left: getProportionateScreenWidth(20),
+            right: getProportionateScreenWidth(64),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text('Бэлэн байгаа тоо хэмжээ :   '),
+              Text(
+                product.quantity.toString(),
+                style: TextStyle(
+                  fontSize: getProportionateScreenWidth(16),
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            top: getProportionateScreenHeight(10),
+            left: getProportionateScreenWidth(20),
+            right: getProportionateScreenWidth(64),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text('Бранд :   '),
+              Text(
+                product.brand.toString(),
+                style: TextStyle(
+                  fontSize: getProportionateScreenWidth(16),
+                  color: Colors.black,
+                ),
+              ),
+            ],
           ),
         ),
         Padding(
           padding: EdgeInsets.only(
               left: getProportionateScreenHeight(22),
-              top: getProportionateScreenHeight(20)),
+              top: getProportionateScreenHeight(10)),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Text('Үнэ :   '),
               Text(
                 "\$${product.price}",
                 style: TextStyle(

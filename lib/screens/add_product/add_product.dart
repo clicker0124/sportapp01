@@ -129,7 +129,7 @@ class _AddProductState extends State<AddProduct> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Product ner ee oruul.';
-                          } else if (value.length > 10) {
+                          } else if (value.length > 20) {
                             return 'Product iin ner heterhii urt baina.';
                           }
                         },
@@ -143,7 +143,7 @@ class _AddProductState extends State<AddProduct> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Тайлбар оруулна уу..';
-                          } else if (value.length > 300) {
+                          } else if (value.length > 1500) {
                             return 'Тайлбарын хэмжээ урт байна.';
                           }
                         },
